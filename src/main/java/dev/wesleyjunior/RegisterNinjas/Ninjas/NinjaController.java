@@ -1,4 +1,4 @@
-package dev.wesleyjunior.RegisterNinjas;
+package dev.wesleyjunior.RegisterNinjas.Ninjas;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
