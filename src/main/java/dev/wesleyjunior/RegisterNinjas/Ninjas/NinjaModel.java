@@ -2,8 +2,14 @@ package dev.wesleyjunior.RegisterNinjas.Ninjas;
 
 import dev.wesleyjunior.RegisterNinjas.Missions.MissionsModel;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.UUID;
+
+//Lobok depedence
+@NoArgsConstructor
+@AllArgsConstructor
+@Data //Getters and setters
 
 @Entity
 @Table(name = "tb_register_ninjas")
@@ -26,30 +32,4 @@ public class NinjaModel {
         this.age = age;
     }
 
-    public NinjaModel() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }

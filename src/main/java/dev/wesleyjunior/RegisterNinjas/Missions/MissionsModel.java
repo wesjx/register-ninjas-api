@@ -2,8 +2,15 @@ package dev.wesleyjunior.RegisterNinjas.Missions;
 
 import dev.wesleyjunior.RegisterNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 
 @Entity
 @Table(name = "tb_missions")
@@ -18,29 +25,10 @@ public class MissionsModel {
     @OneToMany(mappedBy = "missions")
     private NinjaModel ninja;
 
-    public MissionsModel() {
-    }
-
     public MissionsModel(UUID uuid, String title, String description) {
         this.uuid = uuid;
         this.title = title;
         this.difficulty = description;
     }
 
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(String difficulty) {
-        this.difficulty = difficulty;
-    }
 }
