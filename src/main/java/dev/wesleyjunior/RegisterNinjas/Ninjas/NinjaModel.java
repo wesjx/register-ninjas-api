@@ -27,7 +27,7 @@ public class NinjaModel {
     private int age;
 
     @ManyToOne
-    @JoinColumn(name = "missions_id") // Foreing Key
+    @JoinColumn(name = "missions_id") // Foreigner Key
     private MissionsModel missions;
 
 }
