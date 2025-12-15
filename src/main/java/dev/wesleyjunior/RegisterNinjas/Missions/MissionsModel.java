@@ -16,12 +16,18 @@ import java.util.UUID;
 @Table(name = "tb_missions")
 public class MissionsModel {
 
+    @Column(name = "missions_UUID")
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID uuid;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "difficulty")
     private String difficulty;
 
+    @Column(name = "missions")
     @OneToMany(mappedBy = "missions")
     private NinjaModel ninja;
 

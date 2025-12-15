@@ -16,9 +16,12 @@ import java.util.UUID;
 
 public class NinjaModel {
 
+    @Column(name = "ninjas_UUID")
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
+    @Column(name = "name")
     private String name;
 
     @Column(unique = true) //Column is unique, for sensitives datas
