@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -27,9 +28,8 @@ public class MissionsModel {
     @Column(name = "difficulty")
     private String difficulty;
 
-    @Column(name = "missions")
     @OneToMany(mappedBy = "missions")
-    private NinjaModel ninja;
+    private List<NinjaModel> ninjas;
 
     public MissionsModel(UUID uuid, String title, String description) {
         this.uuid = uuid;
