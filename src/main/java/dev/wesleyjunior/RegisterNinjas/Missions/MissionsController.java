@@ -1,18 +1,30 @@
 package dev.wesleyjunior.RegisterNinjas.Missions;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-@RequestMapping
+@RequestMapping("missions")
 @RestController
 public class MissionsController {
 
-    @GetMapping("/missions")
-    public String getMissions() {
-        
-        return "teste";
+    @GetMapping("/list")
+    public String listMission(){
+        return "success";
     }
-    
+
+    @PostMapping("/create")
+    public String createMission(){
+        return "success";
+    }
+
+    @PutMapping("/edit")
+    public String editMission(){
+        return "success";
+    }
+
+    @DeleteMapping("/delete")
+    public String deleteMission(){
+        return "success";
+    }
+
     
 }
