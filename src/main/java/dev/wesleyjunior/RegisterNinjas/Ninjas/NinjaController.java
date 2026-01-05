@@ -3,7 +3,7 @@ package dev.wesleyjunior.RegisterNinjas.Ninjas;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("ninjas")
 public class NinjaController {
 
     @GetMapping("/")
@@ -11,8 +11,8 @@ public class NinjaController {
         return "Test";
     };
 
-    @PostMapping("/criar")
-    public String criarNinja() {
+    @PostMapping("/create")
+    public String createNinja() {
         return "Test post";
     }
 
