@@ -2,7 +2,7 @@ package dev.wesleyjunior.RegisterNinjas.Missions;
 
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("missions")
+@RequestMapping("/missions")
 @RestController
 public class MissionsController {
 
