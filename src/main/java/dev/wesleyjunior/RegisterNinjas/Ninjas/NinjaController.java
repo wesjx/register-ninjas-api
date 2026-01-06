@@ -3,6 +3,8 @@ package dev.wesleyjunior.RegisterNinjas.Ninjas;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/ninjas")
@@ -19,23 +21,23 @@ public class NinjaController {
         return ninjaService.listNinjas();
     }
 
-    @PostMapping("/create")
-    public String createNinja() {
-        return "Test post";
+    @GetMapping("/list/{uuid}")
+    public NinjaModel listNinjasById(@PathVariable UUID uuid) {
+        return ninjaService.listNinjasById(uuid);
     }
 
-    @GetMapping("/search")
-    public String searchNinjas(@RequestParam long id) {
-        return "All Ninjas by id";
+    @PostMapping("/create")
+    public NinjaModel createNinja(@RequestBody NinjaModel ninja) {
+        return ninjaService.createNinja(ninja);
     }
 
     @PutMapping("/edit")
-    public String editNinjas(@RequestParam long id) {
+    public String editNinjas(@RequestParam UUID uuid) {
         return "Edit Ninjas by id";
     }
 
     @DeleteMapping("/delete")
-    public String deleteNinjas(@RequestParam long id) {
+    public String deleteNinjas(@RequestParam UUID uuid) {
         return "Delete Ninjas by id";
     }
 
