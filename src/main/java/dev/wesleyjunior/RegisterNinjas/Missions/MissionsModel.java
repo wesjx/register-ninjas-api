@@ -1,5 +1,6 @@
 package dev.wesleyjunior.RegisterNinjas.Missions;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.wesleyjunior.RegisterNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -29,6 +30,7 @@ public class MissionsModel {
     private String difficulty;
 
     @OneToMany(mappedBy = "missions")
+    @JsonIgnore
     private List<NinjaModel> ninjas;
 
     public MissionsModel(UUID uuid, String title, String description) {
