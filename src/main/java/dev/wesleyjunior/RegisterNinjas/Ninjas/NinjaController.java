@@ -36,9 +36,9 @@ public class NinjaController {
         return "Edit Ninjas by id";
     }
 
-    @DeleteMapping("/delete")
-    public String deleteNinjas(@RequestParam UUID uuid) {
-        return "Delete Ninjas by id";
+    @DeleteMapping("/delete/{uuid}")
+    public void deleteNinjas(@PathVariable UUID uuid) {
+        ninjaService.deleteNinjaById(uuid);
     }
 
 }

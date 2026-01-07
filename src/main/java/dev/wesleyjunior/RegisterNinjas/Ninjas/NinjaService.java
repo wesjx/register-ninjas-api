@@ -16,11 +16,11 @@ public class NinjaService {
         this.ninjaRepository = ninjaRepository;
     }
 
-    public List<NinjaModel> listNinjas(){
+    public List<NinjaModel> listNinjas() {
         return ninjaRepository.findAll();
     }
 
-    public NinjaModel listNinjasById(UUID uuid){
+    public NinjaModel listNinjasById(UUID uuid) {
         Optional<NinjaModel> ninja = ninjaRepository.findById(uuid);
         return ninja.orElse(null);
     }
@@ -29,4 +29,7 @@ public class NinjaService {
         return ninjaRepository.save(ninja);
     }
 
+    public void deleteNinjaById(UUID uuid) {
+        ninjaRepository.deleteById(uuid);
+    }
 }
