@@ -31,14 +31,16 @@ public class NinjaController {
         return ninjaService.createNinja(ninja);
     }
 
-    @PutMapping("/edit")
-    public String editNinjas(@RequestParam UUID uuid) {
-        return "Edit Ninjas by id";
-    }
-
     @DeleteMapping("/delete/{uuid}")
     public void deleteNinjas(@PathVariable UUID uuid) {
         ninjaService.deleteNinjaById(uuid);
+    }
+
+    @PutMapping("/edit/{uuid}")
+    public NinjaModel editNinjas(@PathVariable UUID uuid, @RequestBody NinjaModel ninjaUpdated) {
+
+        return ninjaService.updateNinja(ninjaUpdated, uuid);
+
     }
 
 }

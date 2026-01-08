@@ -1,6 +1,7 @@
 package dev.wesleyjunior.RegisterNinjas.Ninjas;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Collections;
 import java.util.List;
@@ -31,5 +32,14 @@ public class NinjaService {
 
     public void deleteNinjaById(UUID uuid) {
         ninjaRepository.deleteById(uuid);
+    }
+
+    public NinjaModel updateNinja(NinjaModel ninjaUpdated, UUID uuid) {
+        if (ninjaRepository.existsById(uuid)) {
+            ninjaUpdated.setId(uuid);
+            return ninjaRepository.save(ninjaUpdated);
+        }
+
+        return null;
     }
 }
