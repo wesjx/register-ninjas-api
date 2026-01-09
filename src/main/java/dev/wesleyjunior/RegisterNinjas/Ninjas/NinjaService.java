@@ -12,9 +12,11 @@ import java.util.UUID;
 public class NinjaService {
 
     private NinjaRepository ninjaRepository;
+    private NinjaMapper ninjaMapper;
 
-    public NinjaService(NinjaRepository ninjaRepository) {
+    public NinjaService(NinjaRepository ninjaRepository, NinjaMapper ninjaMapper) {
         this.ninjaRepository = ninjaRepository;
+        this.ninjaMapper = ninjaMapper;
     }
 
     public List<NinjaModel> listNinjas() {
@@ -26,8 +28,12 @@ public class NinjaService {
         return ninja.orElse(null);
     }
 
-    public NinjaModel createNinja(NinjaModel ninja) {
-        return ninjaRepository.save(ninja);
+    public NinjaDTO createNinja(NinjaDTO ninjaDTO) {
+
+        NinjaModel ninjaModel = ninjaMapper.map(ninjaDTO);
+        ninjaModel = ninjaRepository.save(ninjaModel);
+
+        return ninjaMapper.map(ninjaModel);
     }
 
     public void deleteNinjaById(UUID uuid) {
