@@ -13,6 +13,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "tb_register_ninjas")
+@ToString(exclude = "missions")
 
 public class NinjaModel {
 
