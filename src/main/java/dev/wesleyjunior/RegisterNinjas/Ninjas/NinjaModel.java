@@ -27,7 +27,11 @@ public class NinjaModel {
     @Column(unique = true) //Column is unique, for sensitives datas
     private String email;
 
+    @Column(name = "age")
     private int age;
+
+    @Column(name = "rank")
+    private String rank;
 
     @ManyToOne
     @JoinColumn(name = "mission_id") // Foreigner Key

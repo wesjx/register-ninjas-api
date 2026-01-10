@@ -17,17 +17,17 @@ public class NinjaController {
     }
 
     @GetMapping("/list")
-    public List<NinjaModel> listNinjas() {
+    public List<NinjaDTO> listNinjas() {
         return ninjaService.listNinjas();
     }
 
     @GetMapping("/list/{uuid}")
-    public NinjaModel listNinjasById(@PathVariable UUID uuid) {
+    public NinjaDTO listNinjasById(@PathVariable UUID uuid) {
         return ninjaService.listNinjasById(uuid);
     }
 
     @PostMapping("/create")
-    public NinjaModel createNinja(@RequestBody NinjaModel ninja) {
+    public NinjaDTO createNinja(@RequestBody NinjaDTO ninja) {
         return ninjaService.createNinja(ninja);
     }
 
@@ -37,7 +37,7 @@ public class NinjaController {
     }
 
     @PutMapping("/edit/{uuid}")
-    public NinjaModel editNinjas(@PathVariable UUID uuid, @RequestBody NinjaModel ninjaUpdated) {
+    public NinjaDTO editNinjas(@PathVariable UUID uuid, @RequestBody NinjaDTO ninjaUpdated) {
 
         return ninjaService.updateNinja(ninjaUpdated, uuid);
 
