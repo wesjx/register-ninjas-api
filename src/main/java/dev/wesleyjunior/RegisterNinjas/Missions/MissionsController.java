@@ -17,6 +17,7 @@ public class MissionsController {
 
     @GetMapping("/list")
     public List<MissionsModel> listMission(){
+
         return missionsService.listMissions();
     }
 
